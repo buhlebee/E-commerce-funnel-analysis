@@ -1,7 +1,7 @@
 --FUNNEL CALCULATIONS
 --i made two tables one where i included items removed from cart and also other detailed calculations...
 select * from funnel_stages_detailed;
---for removed calculations
+--for detailed calculations
 
 --for usual funnel calculations
 select*from funnel_stages;
@@ -9,7 +9,7 @@ select*from funnel_stages;
 --COUNT THE TOTAL AMOUNT OF USERS AT EACH STAGE--
 select
 sum(viewed) as total_views,--SUM() COUNTS THE ADDS/COUNTS EVERYTHING
-sum(carted) as total_carted,--LIKE FOR THIS LINE ITS GOING TO COUNT CARTED EVEN IF THE USER CARTED MULTIPLE TIMES
+sum(carted) as total_carted,--ITS GOING TO COUNT CARTED EVEN IF THE USER CARTED MULTIPLE TIMES
 sum(purchased) as total_purchases
 from funnel_stages;
 --CONVERSION RATE CALCULATIONS
@@ -19,9 +19,9 @@ sum(carted) as total_carted,
 sum(purchased) as total_purchases,
 --CALCULATIONS
 --1st one is the view to cart ratio
-sum( carted)*100/ NULLIF(sum(viewed),0) as view_to_cart_percentage,--- THE NULLIF WILL HELP AVOID ERRORS IN THIS QUERY.
+sum( carted)*100/ NULLIF(sum(viewed),0) as view_to_cart_percentage,--- THE NULLIF WILL HELP AVOID ERRORS IN THIS QUERY.PROTECTS THE CALCULATION
 --cart to purchase ratio
-sum( purchased)*100/ NULLIF(sum(carted),0) as cart_to_purchase_percentage,---INSTEAD OF AN ERROR IT WILL RETURN THE NULL VALUE.
+sum( purchased)*100/ NULLIF(sum(carted),0) as cart_to_purchase_percentage,---INSTEAD OF AN ERROR IT WILL RETURN THE NULL VALUE(0).
 --view to purchase ratio
 sum( purchased)*100/ NULLIF(sum(viewed),0) as view_to_purchase_percantage
 from funnel_stages;
@@ -33,7 +33,7 @@ with monthly_funnel as (
    select
        event_month,
        user_id,
-       MAX(viewed) AS viewed,---MAX COUNTS HOW MANY TIMES IT HAPPENED SO IT COUNTS ONCE, QUITE SIMILAR TO DISTICT 
+       MAX(viewed) AS viewed,--- USED MAX AS THE MAX VALUE SHOULD BE ONE , IT WONT TAKE THE ZEROS TO ACCOUNT
        MAX(carted) AS carted,---I DID IT ON THE FUNNEL STAGES SCRIPT BUT NOTHINGS WRONG WITH MAKING SURE
        MAX(purchased) AS purchased
     from funnel_stages_detailed
