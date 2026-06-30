@@ -18,7 +18,7 @@ select
 	event_month,
 	product_id,
 	category_id,
-	max (case when event_type='view'then 1 else 0 end) as viewed,
+	max (case when event_type='view'then 1 else 0 end) as viewed,---IN THIS INSTANCE MAX() WILL CONFIRM IF THE USER COMPLETED THE ACTION ATLEAST ONCE
 	max (case when event_type='cart'then 1 else 0 end) as carted,
 	max(case when event_type='remove_from_cart'then 1 else 0 end)as removed,
 	max (case when event_type='purchase'then 1 else 0 end) as purchased
