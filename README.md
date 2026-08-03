@@ -50,7 +50,7 @@ I calculated:
 - Overall view-to-purchase conversion
 - Drop-off counts and percentages between stages
 
-`NULLIF` was used to avoid division-by-zero errors.
+`NULLIF` was used to avoid division by zero errors.
 
 **5. Prepared Power BI tables**
 
@@ -58,7 +58,7 @@ I built summary tables specifically for Power BI so the report could load pre-ag
 
 **6. Built the Power BI report**
 
-I imported the data into Power BI using the import-from-database function, and once I had the tables I needed, I built out the report.
+I imported the data into Power BI using the import from database function, and once I had the tables I needed, I built out the report.
 
 The report includes:
 - KPI cards
@@ -69,9 +69,9 @@ The report includes:
 
 ## Key Findings and Recommendations
 
-- About 75% of users who viewed a product never added it to their cart. This suggests there may be opportunities to improve product pages — better product descriptions, customer reviews, or more competitive pricing.
-- About 72% of users who added an item to their cart did not complete a purchase. This could point to friction during checkout, such as unexpected shipping costs, a complicated checkout flow, or limited payment options — worth investigating to reduce cart abandonment.
-- Overall view-to-purchase conversion was approximately 6–7%. Improving conversion at either the view-to-cart or cart-to-purchase stage could meaningfully impact overall sales; targeted promotions or discounts could help close that gap.
+- About 75% of users who viewed a product never added it to their cart. This suggests there may be opportunities to improve product pages ,better product descriptions, customer reviews, or more competitive pricing.
+- About 72% of users who added an item to their cart did not complete a purchase. This could point to friction during checkout, such as unexpected shipping costs, a complicated checkout flow, or limited payment options  worth investigating to reduce cart abandonment.
+- Overall view-to-purchase conversion was approximately 6–7%. Improving conversion at either the view-to-cart or cart-to-purchase stage could meaningfully impact overall sales, targeted promotions or discounts could help close that gap.
 
 ## Project Files
 
