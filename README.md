@@ -81,6 +81,6 @@ The report includes:
 
 ## Limitations
 
-- Product and category IDs in the source dataset are anonymized numeric values with no associated names. As a result, this analysis — particularly the drill-through page — should be read as a demonstration of the technique rather than a narrative about specific products or categories.
+- Product and category IDs in the source dataset are anonymized numeric values with no associated names. As a result, this analysis particularly the drill-through page  should be read as a demonstration of the technique rather than a narrative about specific products or categories.
 - The dataset covers only five months, so longer-term seasonal trends could not be analyzed.
 - `remove_from_cart` events were included in the detailed table but not in the headline conversion metrics.
